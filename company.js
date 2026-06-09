@@ -2,17 +2,17 @@ const pageCopy = {
   ja: {
     htmlLang: "ja",
     title: "みんなのテクノロジー合同会社 | AI・DX・システム開発",
-    description: "みんなのテクノロジー合同会社は、AI活用、業務システム開発、クラウド導入、DX推進を支援するITパートナーです。",
+    description: "みんなのテクノロジー合同会社は、Salesforce導入支援、受託ソフトウェア開発、クラウド導入、IT人材育成・派遣を提供するITパートナーです。",
   },
   en: {
     htmlLang: "en",
     title: "Minna no Technology LLC | AI, DX and System Development",
-    description: "Minna no Technology LLC supports AI adoption, business system development, cloud platforms, and digital transformation.",
+    description: "Minna no Technology LLC provides Salesforce implementation, custom software development, cloud adoption, IT training, and staffing services.",
   },
   zh: {
     htmlLang: "zh-CN",
     title: "大家的科技合同会社 | AI、DX 与系统开发",
-    description: "みんなのテクノロジー合同会社支持 AI 应用、业务系统开发、云导入和 DX 数字化推进。",
+    description: "みんなのテクノロジー合同会社提供 Salesforce 导入、软件委托开发、云服务导入、IT 人才培养与派遣服务。",
   },
 };
 

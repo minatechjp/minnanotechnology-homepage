@@ -582,7 +582,7 @@ a {
   border-top: 1px solid var(--line);
 }
 
-.company-table div {
+.company-table > div {
   display: grid;
   grid-template-columns: minmax(150px, 0.32fr) 1fr;
   gap: 24px;
@@ -592,6 +592,42 @@ a {
 
 .company-table span {
   color: var(--muted);
+}
+
+.company-value {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.company-value ul {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.company-value li {
+  position: relative;
+  padding-left: 15px;
+}
+
+.company-value li::before {
+  content: "";
+  position: absolute;
+  top: 0.72em;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+
+.company-contact-link {
+  color: var(--blue);
+  text-decoration: underline;
+  text-decoration-color: rgb(37 99 235 / 34%);
+  text-underline-offset: 4px;
 }
 
 .history-list {
@@ -901,7 +937,7 @@ a {
     padding-top: 0;
   }
 
-  .company-table div {
+  .company-table > div {
     grid-template-columns: 1fr;
     gap: 6px;
   }
