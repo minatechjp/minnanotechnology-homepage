@@ -30,10 +30,16 @@ html[data-lang="zh"] [data-lang]:not([data-lang="zh"]) {
 
 body {
   margin: 0;
-  background: var(--mist);
+  background-color: var(--mist);
+  background-image:
+    linear-gradient(rgb(37 99 235 / 3.5%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(19 166 165 / 3%) 1px, transparent 1px);
+  background-size: 52px 52px;
+  background-attachment: fixed;
   color: var(--ink);
   font-size: 16px;
   line-height: 1.7;
+  animation: page-grid-drift 28s linear infinite;
 }
 
 a {
@@ -178,21 +184,72 @@ a {
   object-fit: cover;
   object-position: center;
   opacity: 0.74;
+  transform: scale(1.02);
+  animation: hero-background-breathe 18s ease-in-out infinite alternate;
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
   background:
     linear-gradient(90deg, rgb(8 20 38 / 98%) 0%, rgb(8 20 38 / 86%) 32%, rgb(8 20 38 / 34%) 66%, rgb(8 20 38 / 12%) 100%),
     linear-gradient(180deg, rgb(8 20 38 / 28%) 0%, rgb(8 20 38 / 82%) 100%);
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.34;
+  background-image:
+    linear-gradient(rgb(255 255 255 / 8%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(19 166 165 / 10%) 1px, transparent 1px),
+    linear-gradient(90deg, transparent 0 47%, rgb(255 255 255 / 22%) 50%, transparent 53% 100%);
+  background-size: 72px 72px, 72px 72px, 240% 100%;
+  background-position: 0 0, 0 0, 130% 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 28%, #000 62%, #000 100%);
+  mask-image: linear-gradient(90deg, transparent 28%, #000 62%, #000 100%);
+  animation: hero-grid-drift 16s linear infinite;
+}
+
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: min(720px, 100%);
+}
+
+@keyframes page-grid-drift {
+  from {
+    background-position: 0 0, 0 0;
+  }
+
+  to {
+    background-position: 52px 52px, 52px 52px;
+  }
+}
+
+@keyframes hero-background-breathe {
+  from {
+    transform: scale(1.02);
+  }
+
+  to {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes hero-grid-drift {
+  from {
+    background-position: 0 0, 0 0, 130% 0;
+  }
+
+  to {
+    background-position: 72px 36px, 72px 36px, -130% 0;
+  }
 }
 
 .eyebrow {
@@ -956,5 +1013,17 @@ a {
 
   .site-footer {
     display: grid;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body,
+  .hero-media img,
+  .hero::after {
+    animation: none;
   }
 }
