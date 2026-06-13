@@ -260,7 +260,7 @@ window.addEventListener("languagechange", () => {
 });
 
 const revealTargets = document.querySelectorAll(
-  ".section-heading, .training-subheading, .service-card, .lesson-item, .seminar-item, .capability-copy, .process-list li, .company-panel, .address-panel, .career-card"
+  ".section-heading, .training-subheading, .service-card, .lesson-item, .seminar-item, .capability-copy, .process-list li, .company-panel, .address-panel, .career-card, .instructor-recruitment"
 );
 
 if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
